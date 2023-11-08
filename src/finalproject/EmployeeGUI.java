@@ -16,12 +16,14 @@ public class EmployeeGUI extends JFrame{
     private Employee emp1;
     private Employee emp2;
     private Employee emp3;
+    private Employee emp4;
     private EmployeeCRUD crud=new EmployeeCRUD();
     
     private JTabbedPane tp;
     private JPanel panel1;
     private JPanel panel2;
     private JPanel panel3;
+    private JPanel panel4;
     
     //PANEL 1 OBJECTS
     private JLabel lblTitle;
@@ -97,7 +99,31 @@ public class EmployeeGUI extends JFrame{
     private JButton btnSearch3;
     private JButton btnUpdate3;
     private JButton btnClear3;
+    
     //PANEL 4 OBJECTS 
+    private JLabel lblTitle4;
+    private JLabel lblid4;
+    private JLabel lbllname4;
+    private JLabel lblfname4;
+    private JLabel lbladdress14;
+    private JLabel lbladdress24;
+    private JLabel lblcity4;
+    private JLabel lblstate4;
+    private JLabel lblDOB4;
+    private JLabel lblsalary4;
+    
+    private JTextField txtid4;
+    private JTextField txtlname4;
+    private JTextField txtfname4;
+    private JTextField txtaddress14;
+    private JTextField txtaddress24;
+    private JTextField txtcity4;
+    private JTextField txtstate4;
+    private JTextField txtDOB4;
+    private JTextField txtsalary4;
+    
+    private JButton btnSearch4;
+    private JButton btnClear4;
     
     public EmployeeGUI()
     {
@@ -114,7 +140,7 @@ public class EmployeeGUI extends JFrame{
         panel1=new JPanel(null);
         panel2=new JPanel(null);
         panel3=new JPanel(null);
-        //panel4=new JPanel(new BorderLayout());
+        panel4=new JPanel(null);
         //=============
         //PANEL 1 SETUP
         //=============
@@ -416,6 +442,108 @@ public class EmployeeGUI extends JFrame{
         btnClear3.setEnabled(false);
         panel3.add(btnClear3);    
         
+        //=============
+        //PANEL 4 SETUP
+        //=============
+        panel4.setSize(400, 480);
+        lblTitle4=new JLabel("EMPLOYEE SEARCH DATA");
+        lblTitle4.setFont(new Font("Verdana", Font.BOLD, 16));
+        lblTitle4.setHorizontalAlignment(JLabel.CENTER);
+        lblTitle4.setForeground(Color.BLUE);
+        lblTitle4.setBounds(100, 20, 230, 30);
+        panel4.add(lblTitle4);
+        
+        lblid4=new JLabel("Employee ID : ");
+        txtid4=new JTextField(20);
+        lblid4.setHorizontalAlignment(JLabel.RIGHT);
+        lblid4.setBounds(100, 70, 100,25);
+        txtid4.setBounds(200, 70, 100,25);
+        panel4.add(lblid4);
+        panel4.add(txtid4);
+        
+        lbllname4=new JLabel("Last Name : ");
+        txtlname4=new JTextField(20);
+        lbllname4.setHorizontalAlignment(JLabel.RIGHT);
+        lbllname4.setBounds(100, 105, 100,25);
+        txtlname4.setBounds(200, 105, 100,25);
+        txtlname4.setEditable(false);
+        panel4.add(lbllname4);
+        panel4.add(txtlname4);
+        
+        lblfname4=new JLabel("First Name : ");
+        txtfname4=new JTextField(20);
+        lblfname4.setHorizontalAlignment(JLabel.RIGHT);
+        lblfname4.setBounds(100, 140, 100,25);
+        txtfname4.setBounds(200, 140, 100,25);
+        txtfname4.setEditable(false);
+        panel4.add(lblfname4);
+        panel4.add(txtfname4);
+        
+        lbladdress14=new JLabel("Address 1 : ");
+        txtaddress14=new JTextField(20);
+        lbladdress14.setHorizontalAlignment(JLabel.RIGHT);
+        lbladdress14.setBounds(100, 175, 100,25);
+        txtaddress14.setBounds(200, 175, 120,25);
+        txtaddress14.setEditable(false);
+        panel4.add(lbladdress14);
+        panel4.add(txtaddress14);
+        
+        lbladdress24=new JLabel("Address 2 : ");
+        txtaddress24=new JTextField(20);
+        lbladdress24.setHorizontalAlignment(JLabel.RIGHT);
+        lbladdress24.setBounds(100, 210, 100,25);
+        txtaddress24.setBounds(200, 210, 120,25);
+        txtaddress24.setEditable(false);
+        panel4.add(lbladdress24);
+        panel4.add(txtaddress24);
+        
+        lblcity4=new JLabel("City : ");
+        txtcity4=new JTextField(20);
+        lblcity4.setHorizontalAlignment(JLabel.RIGHT);
+        lblcity4.setBounds(100, 245, 100,25);
+        txtcity4.setBounds(200, 245, 100,25);
+        txtcity4.setEditable(false);
+        panel4.add(lblcity4);
+        panel4.add(txtcity4);
+        
+        lblstate4=new JLabel("State : ");
+        txtstate4=new JTextField(20);
+        lblstate4.setHorizontalAlignment(JLabel.RIGHT);
+        lblstate4.setBounds(100, 280, 100,25);
+        txtstate4.setBounds(200, 280, 100,25);
+        txtstate4.setEditable(false);
+        panel4.add(lblstate4);
+        panel4.add(txtstate4);
+        
+        lblDOB4=new JLabel("DOB : ");
+        txtDOB4=new JTextField(20);
+        lblDOB4.setHorizontalAlignment(JLabel.RIGHT);
+        lblDOB4.setBounds(100, 315, 100,25);
+        txtDOB4.setBounds(200, 315, 100,25);
+        txtDOB4.setEditable(false);
+        panel4.add(lblDOB4);
+        panel4.add(txtDOB4);
+        
+        lblsalary4=new JLabel("Salary : ");
+        txtsalary4=new JTextField(20);
+        lblsalary4.setHorizontalAlignment(JLabel.RIGHT);
+        lblsalary4.setBounds(100, 350, 100,25);
+        txtsalary4.setBounds(200, 350, 100,25);
+        txtsalary4.setEditable(false);
+        panel4.add(lblsalary4);
+        panel4.add(txtsalary4);
+        
+        btnSearch4=new JButton("Search");
+        btnSearch4.addActionListener(new Search4());
+        btnSearch4.setBounds(70, 390, 80, 25);
+        panel4.add(btnSearch4);
+        
+        btnClear4=new JButton("Clear");
+        btnClear4.addActionListener(new Clear4());
+        btnClear4.setBounds(250, 390, 80, 25);
+        btnClear4.setEnabled(false);
+        panel4.add(btnClear4);  
+        
         //assembling all panels 
         //
         tp.setBounds(0, 0, 400, 480);
@@ -424,6 +552,7 @@ public class EmployeeGUI extends JFrame{
         tp.addTab("Insert", panel1);
         tp.addTab("Delete", panel2);
         tp.addTab("Update", panel3);
+        tp.addTab("Search", panel4);
         
     }
     
@@ -675,4 +804,50 @@ public class EmployeeGUI extends JFrame{
         }
     }
     
+    private class Search4 implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            int id=Integer.parseInt(txtid4.getText());
+            emp4=crud.selectEmployee(id);
+            if(emp4!=null)
+            {
+            txtlname4.setText(emp4.getLname());
+            txtfname4.setText(emp4.getFname());
+            txtaddress14.setText(emp4.getAddress1());
+            txtaddress24.setText(emp4.getAddress2());
+            txtcity4.setText(emp4.getCity());
+            txtstate4.setText(emp4.getState());
+            txtDOB4.setText(emp4.getDOB());
+            txtsalary4.setText(""+emp4.getSalary());
+            txtid4.requestFocus();
+            txtid4.setEditable(false);
+            btnClear4.setEnabled(true);
+            }
+            else
+            {
+                txtid4.setText("");
+                txtid4.requestFocus();
+                JOptionPane.showMessageDialog(null,"The Employee  # "+id+" was not found!!!"); 
+            }
+        }
+    }        
+    private class Clear4 implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            txtid4.setText("");
+            txtlname4.setText("");
+            txtfname4.setText("");
+            txtaddress14.setText("");
+            txtaddress24.setText("");
+            txtcity4.setText("");
+            txtstate4.setText("");
+            txtDOB4.setText("");
+            txtsalary4.setText("");
+            txtid4.requestFocus();
+            txtid4.setEditable(true);
+            btnClear4.setEnabled(false);
+        }
+    }
 }
