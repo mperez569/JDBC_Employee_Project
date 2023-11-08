@@ -8,19 +8,12 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class EmployeeCRUD {
-    //previous local hostname --> localhost:3306
-    //AWS hostname--> cis114.ctg5hfkjprwp.us-east-1.rds.amazonaws.com
-    //port --> 3306
-    //previous name --> finalproject
-    //database name --> wright
-    private final String jdbcURL="jdbc:mysql://cis114.ctg5hfkjprwp.us-east-1.rds.amazonaws.com:3306/wright";
-    //previous username was root
-    //new username is mperez569
-    private final String jdbcUsername="mperez569";
-    
-    //previous password was Cps50164404!
-    //new password is MartinPerez
-    private final String jdbcPassword="MartinPerez";
+    //Make sure that the inbound rules have been changed to allow anyone to acess the database
+    private final String jdbcURL="jdbc:mysql://"Your AWS RDS Endpoint":3306/"Database Name";
+
+    private final String jdbcUsername="MySQL USERNAME";
+
+    private final String jdbcPassword="MySQL PASSWORD";
     
     private static final String INSERT_EMPLOYEE_SQL="insert into Employee(EmpLname, EmpFname, EmpAddress1," +
     "EmpAddress2, EmpCity, EmpState, EmpDOB, EmpBaseSalary)" + "values"+
