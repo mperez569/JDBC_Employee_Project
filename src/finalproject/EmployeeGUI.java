@@ -1,3 +1,4 @@
+//optimizations can be made to this code. Create a panel class where the structure can be reused, but the attributes are different.
 package finalproject;
 
 import java.awt.*;
