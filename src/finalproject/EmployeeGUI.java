@@ -1,4 +1,9 @@
-//optimizations can be made to this code. Create a panel class where the structure can be reused, but the attributes are different.
+/*
+optimizations and refactoring can be made to this code to make it more readable and reusable, while reducing code redundancy. 
+Create a panel template class where it can handle the common setup for each panel, 
+this will reduce redundancy and make the code more maintainable.
+The class will encapsulate the common behaviors while allowing attributes of each panel to be different.
+*/
 package finalproject;
 
 import java.awt.*;
